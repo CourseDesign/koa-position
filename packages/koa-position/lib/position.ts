@@ -1,13 +1,9 @@
-import Application, { DefaultContext, DefaultState } from "koa";
+import { DefaultContext, DefaultState } from "koa";
+import Injector from "./injector";
+import Extractor from "./extractor";
 
-interface Position<StateT = DefaultState, CustomT = DefaultContext> {
-  inject(
-    ctx: Application.ParameterizedContext<StateT, CustomT>,
-    value: unknown
-  ): void | Promise<void>;
-  extract(
-    ctx: Application.ParameterizedContext<StateT, CustomT>
-  ): unknown | Promise<unknown>;
-}
+interface Position<StateT = DefaultState, CustomT = DefaultContext>
+  extends Injector<StateT, CustomT>,
+    Extractor<StateT, CustomT> {}
 
 export default Position;
