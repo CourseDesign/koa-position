@@ -7,7 +7,7 @@ function response<T = unknown>(
   return {
     inject: (ctx, value): void => {
       if (key !== undefined) {
-        ctx.response[key] = value as (Response & T)[keyof (T & Response)];
+        ctx.response[key] = value as never;
       }
     },
     extract: (ctx) => {
