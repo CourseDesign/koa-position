@@ -1,11 +1,12 @@
 import * as Cookies from "cookies";
 import Position from "./position";
+import DefaultPosition from "./default-position";
 
 function cookies(
   key?: string,
   options?: { get?: Cookies.GetOption; set?: Cookies.SetOption }
 ): Position {
-  return {
+  return new DefaultPosition({
     inject: (ctx, value?: string | null): void => {
       if (key !== undefined) {
         ctx.cookies.set(key, value, options?.set);
@@ -17,6 +18,7 @@ function cookies(
       }
       return ctx.cookies;
     },
-  };
+  });
 }
+
 export default cookies;
