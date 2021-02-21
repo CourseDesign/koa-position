@@ -1,10 +1,11 @@
 import { DefaultState, Response } from "koa";
 import Position from "./position";
+import DefaultPosition from "./default-position";
 
 function response<T = unknown>(
   key?: keyof (T & Response)
 ): Position<DefaultState, { response: T & Response }> {
-  return {
+  return new DefaultPosition({
     inject: (ctx, value): void => {
       if (key !== undefined) {
         ctx.response[key] = value as never;
@@ -16,6 +17,7 @@ function response<T = unknown>(
       }
       return ctx.response;
     },
-  };
+  });
 }
+
 export default response;
