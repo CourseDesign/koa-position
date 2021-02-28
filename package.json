@@ -1,6 +1,6 @@
 {
   "name": "koa-position",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,8 +13,7 @@
     "compile": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
-    "postinstall": "husky install"
+    "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "devDependencies": {
     "@types/cookies": "^0.7.6",
