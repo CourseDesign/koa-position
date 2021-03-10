@@ -15,7 +15,7 @@ function query(key?: keyof ParsedUrlQuery): Position {
       if (key !== undefined) {
         return ctx.query[key];
       }
-      return ctx;
+      return ctx.query;
     },
   });
 }

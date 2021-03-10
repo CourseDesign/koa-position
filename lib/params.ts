@@ -17,7 +17,7 @@ function params<CustomT = Record<string, string>>(
       if (key !== undefined) {
         return ctx.params[key];
       }
-      return ctx;
+      return ctx.params;
     },
   });
 }
