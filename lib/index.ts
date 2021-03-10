@@ -8,3 +8,5 @@ export { default as state } from "./state";
 export { default as request } from "./request";
 export { default as response } from "./request";
 export { default as cookies } from "./cookies";
+export { default as query } from "./query";
+export { default as params } from "./params";
