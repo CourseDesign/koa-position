@@ -8,6 +8,7 @@ function query(key?: keyof ParsedUrlQuery): Position {
       if (key !== undefined) {
         ctx.request.query[key] = value as never;
       }
+      ctx.request.query = value as never;
     },
     extract: (ctx) => {
       if (key !== undefined) {

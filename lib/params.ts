@@ -9,6 +9,8 @@ function params<CustomT = Record<string, string>>(
     inject: (ctx, value): void => {
       if (key !== undefined) {
         ctx.request.params[key] = value as never;
+      } else {
+        ctx.request.params = value as CustomT;
       }
     },
     extract: (ctx) => {
