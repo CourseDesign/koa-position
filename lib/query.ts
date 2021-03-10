@@ -1,10 +1,8 @@
+import { ParsedUrlQuery } from "querystring";
 import Position from "./position";
 import DefaultPosition from "./default-position";
-import {ParsedUrlQuery} from "querystring";
 
-function query(
-  key?: keyof ParsedUrlQuery
-): Position {
+function query(key?: keyof ParsedUrlQuery): Position {
   return new DefaultPosition({
     inject: (ctx, value): void => {
       if (key !== undefined) {
