@@ -6,14 +6,14 @@ function query(key?: keyof ParsedUrlQuery): Position {
   return new DefaultPosition({
     inject: (ctx, value): void => {
       if (key !== undefined) {
-        ctx.request.query[key] = value as never;
+        ctx.query[key] = value as never;
       } else {
-        ctx.request.query = value as never;
+        ctx.query = value as never;
       }
     },
     extract: (ctx) => {
       if (key !== undefined) {
-        return ctx.request.query[key];
+        return ctx.query[key];
       }
       return ctx;
     },
